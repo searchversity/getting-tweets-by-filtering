@@ -11,6 +11,10 @@ class listener (StreamListener):
 
     def on_data (self, data):
         print (data)
+        saveFile = open('twitDB.csv','a')
+        saveFile.write(data)
+        saveFile.write('\n')
+        saveFile.close
         return True
 
     def on_error (self, status):
